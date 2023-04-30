@@ -9,25 +9,25 @@ export const userTypes = [
   {
     name: 'System Admin',
     icon: <RiAdminFill />,
-    color: '',
+    color: 'blueish',
     route: 'system_admin',
   },
   {
     name: 'Hospital Admin',
     icon: <BsHospitalFill />,
-    color: '',
+    color: 'greenish',
     route: 'hospital_admin',
   },
   {
     name: 'Doctor',
     icon: <GiPlagueDoctorProfile />,
-    color: '',
+    color: 'green',
     route: 'doctor',
   },
   {
     name: 'Patient',
     icon: <FaUserAlt />,
-    color: '',
+    color: 'blueish',
     route: 'patient',
   },
 ];

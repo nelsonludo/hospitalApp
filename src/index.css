@@ -1,8 +1,36 @@
 :root {
+  --green: #00cd0a;
+  --whitish: #f1f1f1;
+  --grey: #cbcaca;
+  --blueish: #2bc2d3;
+  --greenish: #00dcb6;
+  --white: #ffffff;
+  --massive-font-size: 40px;
+  --big-font-size: 30px;
+  --medium-font-size: 20px;
+  --height-without-navbar: calc(100vh - 65px);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex2 {
+  display: flex;
+  justify-content: center;
+  align-items: start;
 }
