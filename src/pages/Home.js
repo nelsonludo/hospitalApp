@@ -29,7 +29,7 @@ const Wrapper = styled.section`
   width: 100%;
   height: var(--height-without-navbar);
   background-image: url('/images/bg-home.jpg');
-  background-size: 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 
   h1,

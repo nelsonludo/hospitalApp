@@ -4,7 +4,7 @@ import SystemAdminLeft from '../components/SystemAdminLeft';
 import SystemAdminRight from '../components/SystemAdminRight';
 
 const SystemAdmin = () => {
-  const [rightDisplay, setRightDisplay] = useState('dashbord');
+  const [rightDisplay, setRightDisplay] = useState('dashboard');
 
   return (
     <Wrapper>

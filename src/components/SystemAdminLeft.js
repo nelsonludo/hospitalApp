@@ -1,104 +1,70 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AiOutlineRight, AiOutlineDown } from 'react-icons/ai';
+import { AiOutlineHome } from 'react-icons/ai';
+import { BsHospitalFill } from 'react-icons/bs';
+import { RiAdminFill } from 'react-icons/ri';
+import { FaUserAlt } from 'react-icons/fa';
+import ButtonWithSubButtons from './ButtonWithSubButtons';
 
 const SystemAdminLeft = ({ rightDisplay, setRightDisplay }) => {
   return (
     <Wrapper>
       <div className='flex'>
-        <button onClick={() => setRightDisplay('dashbord')}>Home</button>
+        <button className='home' onClick={() => setRightDisplay('dashbord')}>
+          <div className='flex2'>
+            <AiOutlineHome style={{ marginRight: '5px' }} /> Home
+          </div>
+        </button>
         <p>System Admin</p>
       </div>
       <div className='flex2'>
         <img src='/images/profile.jpg' alt='' className='profile' />
       </div>
       <div className='additional-info'>
-        <p className='name'>My name here</p>
-        <p className='profession'>My profession here</p>
+        <h2 className='name'>My name here</h2>
+        <h3 className='profession'>profession</h3>
       </div>
       <div className='list-of-buttons'>
-        <div className='btn-container'>
-          <button
-            className={`${rightDisplay === 'dashbord' && 'green'}`}
-            onClick={() => setRightDisplay('dashbord')}
-          >
-            Dashbord
-          </button>
-        </div>
-        <div className='btn-container'>
-          <button
-            className={`${rightDisplay === 'hospitals' && 'green'}`}
-            onClick={() =>
-              rightDisplay === 'hospitals'
-                ? setRightDisplay('dashbord')
-                : setRightDisplay('hospitals')
-            }
-          >
-            Hospitals{' '}
-            {rightDisplay === 'hospitals' ? (
-              <AiOutlineDown />
-            ) : (
-              <AiOutlineRight />
-            )}
-          </button>
-          {rightDisplay === 'hospitals' && (
-            <div className='sub-btn-container'>
-              <button>All Hospital</button>
-              <button>Add Hospital</button>
-              <button>Hospital Profiles</button>
-            </div>
-          )}
-        </div>
-        <div className='btn-container'>
-          <button
-            className={`${
-              rightDisplay === 'hospital_administrators' && 'green'
-            }`}
-            onClick={() =>
-              rightDisplay === 'hospital_administrators'
-                ? setRightDisplay('dashbord')
-                : setRightDisplay('hospital_administrators')
-            }
-          >
-            Hospitals Administrators{' '}
-            {rightDisplay === 'hospital_administrators' ? (
-              <AiOutlineDown />
-            ) : (
-              <AiOutlineRight />
-            )}
-          </button>
-          {rightDisplay === 'hospital_administrators' && (
-            <div className='sub-btn-container'>
-              <button>All Hospital Administrators</button>
-              <button>Add Hospital Administrators</button>
-              <button>Hospital Administrators Profiles</button>
-            </div>
-          )}
-        </div>
-        <div className='btn-container'>
-          <button
-            className={`${rightDisplay === 'system_administrator' && 'green'}`}
-            onClick={() =>
-              rightDisplay === 'system_administrator'
-                ? setRightDisplay('dashbord')
-                : setRightDisplay('system_administrator')
-            }
-          >
-            System Administrators{' '}
-            {rightDisplay === 'system_administrator' ? (
-              <AiOutlineDown />
-            ) : (
-              <AiOutlineRight />
-            )}
-          </button>
-          {rightDisplay === 'system_administrator' && (
-            <div className='sub-btn-container'>
-              <button>All System Administrators</button>
-              <button>Add System Administrators</button>
-              <button>System Administrators Profiles</button>
-            </div>
-          )}
-        </div>
+        <ButtonWithSubButtons
+          name={'Dashboard'}
+          pageName={'dashboard'}
+          icon={<AiOutlineHome />}
+          rightDisplay={rightDisplay}
+          setRightDisplay={setRightDisplay}
+        />
+        <ButtonWithSubButtons
+          name={'Hospital '}
+          pageName={'hospital'}
+          subButtons={['All Hospital ', 'Add Hospital ', 'Hospital  Profiles']}
+          icon={<BsHospitalFill />}
+          rightDisplay={rightDisplay}
+          setRightDisplay={setRightDisplay}
+        />
+        <ButtonWithSubButtons
+          name={'Hospital Administrator'}
+          pageName={'hospital_administrator'}
+          subButtons={[
+            'All Hospital Administrators',
+            'Add Hospital Administrator',
+            'Hospital Administrator Profiles',
+          ]}
+          icon={<FaUserAlt />}
+          rightDisplay={rightDisplay}
+          setRightDisplay={setRightDisplay}
+        />
+
+        <ButtonWithSubButtons
+          name={'System Administrator'}
+          pageName={'system_administrator'}
+          subButtons={[
+            'All System Administrators',
+            'Add System Administrator',
+            'System Administrator Profiles',
+          ]}
+          icon={<RiAdminFill />}
+          rightDisplay={rightDisplay}
+          setRightDisplay={setRightDisplay}
+        />
       </div>
     </Wrapper>
   );
@@ -110,14 +76,47 @@ const Wrapper = styled.section`
   width: 20%;
   background-color: var(--white);
   padding: 20px 15px;
+  color: var(--black);
+  font-size: 18px;
+  box-shadow: 4px 0 10px -2px #888;
 
-  .profile {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
+  button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--black);
+    font-size: 18px;
   }
 
-  .green {
-    color: var(--green);
+  .home {
+    border: 2px solid var(--green);
+    padding: 10px;
+    border-radius: 15px;
+    font-weight: bold;
+  }
+
+  .profile {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border: 3px solid red;
+    border-radius: 50%;
+    margin-top: 50px;
+  }
+
+  .additional-info {
+    color: var(--grey);
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--grey);
+  }
+
+  .additional-info h2,
+  .additional-info h3 {
+    font-weight: normal;
+  }
+
+  .list-of-buttons {
+    margin-top: 50px;
   }
 `;

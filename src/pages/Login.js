@@ -104,7 +104,7 @@ export default Login;
 const Wrapper = styled.section`
   height: var(--height-without-navbar);
   background-image: url('/images/login-bg.jpg');
-  background-size: 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 
   form {
