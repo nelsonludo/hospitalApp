@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import {
   AiOutlineRight,
@@ -15,6 +15,12 @@ const ButtonWithSubButtons = ({
   setRightDisplay,
 }) => {
   const [showSubButtons, setShowSubButtons] = useState(false);
+
+  useEffect(() => {
+    if (rightDisplay !== pageName) {
+      setShowSubButtons(false);
+    }
+  }, [rightDisplay, pageName]);
 
   return (
     <Wrapper>
