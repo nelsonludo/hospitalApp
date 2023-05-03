@@ -22,10 +22,10 @@ export default Navbar;
 const Wrapper = styled.section`
   background-color: var(--green);
   color: var(--white);
-  padding: 15px 0;
 
   .logo {
     font-size: var(--big-font-size);
+    padding: 15px 0;
   }
 
   .help {

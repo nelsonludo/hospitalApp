@@ -16,6 +16,8 @@ const User = ({ name, icon, color, route }) => {
 export default User;
 
 const Wrapper = styled.article`
+  border-radius: 10px;
+
   a {
     padding: 10px 15px;
     display: flex;

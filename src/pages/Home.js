@@ -2,20 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import { userTypes } from '../utils/constants';
 import User from '../components/User';
+import Navbar from '../components/Navbar';
 
 const Home = () => {
   return (
-    <Wrapper className='flex2'>
-      <div className='container'>
-        <h1>Welcome to HospitalApp</h1>
-        <h2>Select your user type below</h2>
-        <div className='users flex'>
-          {userTypes.map((user, index) => {
-            return <User key={index} {...user} />;
-          })}
+    <>
+      <Navbar />
+      <Wrapper className='flex2'>
+        <div className='container'>
+          <h1>Welcome to HospitalApp</h1>
+          <h2>Select your user type below</h2>
+          <div className='users flex'>
+            {userTypes.map((user, index) => {
+              return <User key={index} {...user} />;
+            })}
+          </div>
         </div>
-      </div>
-    </Wrapper>
+      </Wrapper>
+    </>
   );
 };
 
@@ -23,8 +27,10 @@ export default Home;
 
 const Wrapper = styled.section`
   width: 100%;
-  /* background-color: pink; */
   height: var(--height-without-navbar);
+  background-image: url('/images/bg-home.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
 
   h1,
   h2 {
@@ -45,8 +51,7 @@ const Wrapper = styled.section`
   }
 
   .container {
-    background-color: red;
     width: 70%;
-    margin-top: 17%;
+    margin-top: 10%;
   }
 `;
