@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import SystemAdminNavbar from './SystemAdminNavbar';
 import SystemAdminTitle from './SystemAdminTitle';
+import Dashboard from './Dashboard';
+import Hospital from './Hospital';
 
 const SystemAdminRight = ({ rightDisplay }) => {
   if (rightDisplay === 'dashboard') {
@@ -9,7 +11,7 @@ const SystemAdminRight = ({ rightDisplay }) => {
       <Wrapper>
         <SystemAdminNavbar />
         <SystemAdminTitle title={'Dashboard'} />
-        <h1>dashboard</h1>
+        <Dashboard />
       </Wrapper>
     );
   }
@@ -19,7 +21,7 @@ const SystemAdminRight = ({ rightDisplay }) => {
       <Wrapper>
         <SystemAdminNavbar />
         <SystemAdminTitle title={'Hospital'} />
-        <h1>hospital</h1>
+        <Hospital />
       </Wrapper>
     );
   }
