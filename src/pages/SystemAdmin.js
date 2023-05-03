@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import SystemAdminLeft from '../components/SystemAdminLeft';
 import SystemAdminRight from '../components/SystemAdminRight';
 
 const SystemAdmin = () => {
+  const [rightDisplay, setRightDisplay] = useState('dashbord');
+
   return (
     <Wrapper>
-      <SystemAdminLeft />
-      <SystemAdminRight />
+      <SystemAdminLeft
+        rightDisplay={rightDisplay}
+        setRightDisplay={setRightDisplay}
+      />
+      <SystemAdminRight
+        rightDisplay={rightDisplay}
+        setRightDisplay={setRightDisplay}
+      />
     </Wrapper>
   );
 };
