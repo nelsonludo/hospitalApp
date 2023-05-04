@@ -4,8 +4,9 @@ import SystemAdminNavbar from './SystemAdminNavbar';
 import SystemAdminTitle from './SystemAdminTitle';
 import Dashboard from './Dashboard';
 import Hospital from './Hospital';
+import HospitalAdmins from './HospitalAdmins';
 
-const SystemAdminRight = ({ rightDisplay }) => {
+const SystemAdminRight = ({ rightDisplay, subRightDisplay }) => {
   if (rightDisplay === 'dashboard') {
     return (
       <Wrapper>
@@ -21,7 +22,7 @@ const SystemAdminRight = ({ rightDisplay }) => {
       <Wrapper>
         <SystemAdminNavbar />
         <SystemAdminTitle title={'Hospital'} />
-        <Hospital />
+        <Hospital subRightDisplay={subRightDisplay} />
       </Wrapper>
     );
   }
@@ -31,7 +32,7 @@ const SystemAdminRight = ({ rightDisplay }) => {
       <Wrapper>
         <SystemAdminNavbar />
         <SystemAdminTitle title={'Hospital Administrator'} />
-        <h1>hospital-administrator</h1>
+        <HospitalAdmins subRightDisplay={subRightDisplay} />
       </Wrapper>
     );
   }
@@ -50,5 +51,5 @@ const SystemAdminRight = ({ rightDisplay }) => {
 export default SystemAdminRight;
 
 const Wrapper = styled.section`
-  width: 80%;
+  width: 75%;
 `;

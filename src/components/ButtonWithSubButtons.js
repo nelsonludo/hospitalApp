@@ -13,6 +13,8 @@ const ButtonWithSubButtons = ({
   icon,
   rightDisplay,
   setRightDisplay,
+  subRightDisplay,
+  setSubRightDisplay,
 }) => {
   const [showSubButtons, setShowSubButtons] = useState(false);
 
@@ -29,6 +31,7 @@ const ButtonWithSubButtons = ({
         onClick={() => {
           setRightDisplay(pageName);
           setShowSubButtons(!showSubButtons);
+          subButtons?.length > 0 && setSubRightDisplay(subButtons[0]);
         }}
       >
         <div className='flex'>
@@ -47,7 +50,11 @@ const ButtonWithSubButtons = ({
           <div className='sub-btn-container'>
             {subButtons?.map((button, index) => {
               return (
-                <button key={index}>
+                <button
+                  key={index}
+                  onClick={() => setSubRightDisplay(button)}
+                  className={`${subRightDisplay === button && 'green'}`}
+                >
                   <AiOutlineArrowRight /> {button}
                 </button>
               );

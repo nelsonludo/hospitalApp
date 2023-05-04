@@ -6,11 +6,16 @@ import { RiAdminFill } from 'react-icons/ri';
 import { FaUserAlt } from 'react-icons/fa';
 import ButtonWithSubButtons from './ButtonWithSubButtons';
 
-const SystemAdminLeft = ({ rightDisplay, setRightDisplay }) => {
+const SystemAdminLeft = ({
+  rightDisplay,
+  setRightDisplay,
+  setSubRightDisplay,
+  subRightDisplay,
+}) => {
   return (
     <Wrapper>
       <div className='flex'>
-        <button className='home' onClick={() => setRightDisplay('dashbord')}>
+        <button className='home' onClick={() => setRightDisplay('dashboard')}>
           <div className='flex2'>
             <AiOutlineHome style={{ marginRight: '5px' }} /> Home
           </div>
@@ -31,14 +36,18 @@ const SystemAdminLeft = ({ rightDisplay, setRightDisplay }) => {
           icon={<AiOutlineHome />}
           rightDisplay={rightDisplay}
           setRightDisplay={setRightDisplay}
+          subRightDisplay={subRightDisplay}
+          setSubRightDisplay={setSubRightDisplay}
         />
         <ButtonWithSubButtons
           name={'Hospital '}
           pageName={'hospital'}
-          subButtons={['All Hospital ', 'Add Hospital ', 'Hospital  Profiles']}
+          subButtons={['All Hospitals', 'Add Hospital', 'Hospital  Profiles']}
           icon={<BsHospitalFill />}
           rightDisplay={rightDisplay}
           setRightDisplay={setRightDisplay}
+          subRightDisplay={subRightDisplay}
+          setSubRightDisplay={setSubRightDisplay}
         />
         <ButtonWithSubButtons
           name={'Hospital Administrator'}
@@ -51,6 +60,8 @@ const SystemAdminLeft = ({ rightDisplay, setRightDisplay }) => {
           icon={<FaUserAlt />}
           rightDisplay={rightDisplay}
           setRightDisplay={setRightDisplay}
+          subRightDisplay={subRightDisplay}
+          setSubRightDisplay={setSubRightDisplay}
         />
 
         <ButtonWithSubButtons
@@ -64,6 +75,8 @@ const SystemAdminLeft = ({ rightDisplay, setRightDisplay }) => {
           icon={<RiAdminFill />}
           rightDisplay={rightDisplay}
           setRightDisplay={setRightDisplay}
+          subRightDisplay={subRightDisplay}
+          setSubRightDisplay={setSubRightDisplay}
         />
       </div>
     </Wrapper>
@@ -73,7 +86,7 @@ const SystemAdminLeft = ({ rightDisplay, setRightDisplay }) => {
 export default SystemAdminLeft;
 
 const Wrapper = styled.section`
-  width: 20%;
+  width: 25%;
   background-color: var(--white);
   padding: 20px 15px;
   color: var(--black);

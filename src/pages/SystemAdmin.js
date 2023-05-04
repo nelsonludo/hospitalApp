@@ -5,16 +5,21 @@ import SystemAdminRight from '../components/SystemAdminRight';
 
 const SystemAdmin = () => {
   const [rightDisplay, setRightDisplay] = useState('dashboard');
+  const [subRightDisplay, setSubRightDisplay] = useState('');
 
   return (
     <Wrapper>
       <SystemAdminLeft
         rightDisplay={rightDisplay}
         setRightDisplay={setRightDisplay}
+        subRightDisplay={subRightDisplay}
+        setSubRightDisplay={setSubRightDisplay}
       />
       <SystemAdminRight
         rightDisplay={rightDisplay}
         setRightDisplay={setRightDisplay}
+        subRightDisplay={subRightDisplay}
+        setSubRightDisplay={setSubRightDisplay}
       />
     </Wrapper>
   );
