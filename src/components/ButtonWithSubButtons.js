@@ -5,62 +5,52 @@ import {
   AiOutlineDown,
   AiOutlineArrowRight,
 } from 'react-icons/ai';
+import { NavLink } from 'react-router-dom';
 
-const ButtonWithSubButtons = ({
-  name,
-  subButtons,
-  pageName,
-  icon,
-  rightDisplay,
-  setRightDisplay,
-  subRightDisplay,
-  setSubRightDisplay,
-}) => {
-  const [showSubButtons, setShowSubButtons] = useState(false);
-
-  useEffect(() => {
-    if (rightDisplay !== pageName) {
-      setShowSubButtons(false);
-    }
-  }, [rightDisplay, pageName]);
+const ButtonWithSubButtons = ({ name, sublinks, icon, link }) => {
+  const [showSubButtons, setShowSubButtons] = useState(true);
 
   return (
     <Wrapper>
-      <button
-        className={`${rightDisplay === pageName ? 'btn green' : 'btn'}`}
-        onClick={() => {
-          setRightDisplay(pageName);
-          setShowSubButtons(!showSubButtons);
-          subButtons?.length > 0 && setSubRightDisplay(subButtons[0]);
-        }}
+      <NavLink
+        to={`${sublinks?.length > 0 ? `${link}/${sublinks[0].link}` : link}`}
+        className={({ isActive }) => (isActive ? 'green' : '')}
       >
-        <div className='flex'>
-          <div>
-            <span>{icon}</span>
-            <span className='name'>{name}</span>
+        <button
+          className='btn'
+          onClick={() => {
+            setShowSubButtons(!showSubButtons);
+          }}
+        >
+          <div className='flex'>
+            <div>
+              <span>{icon}</span>
+              <span className='name'>{name}</span>
+            </div>
+            {sublinks?.length > 0 && (
+              <div>
+                {showSubButtons ? <AiOutlineDown /> : <AiOutlineRight />}
+              </div>
+            )}
           </div>
-          {subButtons?.length > 0 && (
-            <div>{showSubButtons ? <AiOutlineDown /> : <AiOutlineRight />}</div>
-          )}
-        </div>
-      </button>
-      {showSubButtons &&
-        rightDisplay === pageName &&
-        subButtons?.length > 0 && (
-          <div className='sub-btn-container'>
-            {subButtons?.map((button, index) => {
-              return (
-                <button
-                  key={index}
-                  onClick={() => setSubRightDisplay(button)}
-                  className={`${subRightDisplay === button && 'green'}`}
-                >
-                  <AiOutlineArrowRight /> {button}
+        </button>
+      </NavLink>
+      {showSubButtons && sublinks?.length > 0 && (
+        <div className='sub-btn-container'>
+          {sublinks?.map((button, index) => {
+            return (
+              <NavLink
+                to={`${link}/${button.link}`}
+                className={({ isActive }) => (isActive ? 'green' : '')}
+              >
+                <button key={index}>
+                  <AiOutlineArrowRight /> {button.name}
                 </button>
-              );
-            })}
-          </div>
-        )}
+              </NavLink>
+            );
+          })}
+        </div>
+      )}
     </Wrapper>
   );
 };
@@ -68,10 +58,14 @@ const ButtonWithSubButtons = ({
 export default ButtonWithSubButtons;
 
 const Wrapper = styled.article`
+  a {
+    text-decoration: none;
+    display: block;
+  }
+
   button {
     display: block;
     margin: 15px 0;
-
     transition: color 0.2s linear;
   }
 
@@ -93,7 +87,7 @@ const Wrapper = styled.article`
     margin-left: 10px;
   }
 
-  .green {
+  a.green button {
     color: var(--green);
   }
 `;

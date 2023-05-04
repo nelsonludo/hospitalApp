@@ -5,17 +5,13 @@ import { BsHospitalFill } from 'react-icons/bs';
 import { RiAdminFill } from 'react-icons/ri';
 import { FaUserAlt } from 'react-icons/fa';
 import ButtonWithSubButtons from './ButtonWithSubButtons';
+import { systemAdminLinks } from '../utils/constants';
 
-const SystemAdminLeft = ({
-  rightDisplay,
-  setRightDisplay,
-  setSubRightDisplay,
-  subRightDisplay,
-}) => {
+const SystemAdminLeft = () => {
   return (
     <Wrapper>
       <div className='flex'>
-        <button className='home' onClick={() => setRightDisplay('dashboard')}>
+        <button className='home'>
           <div className='flex2'>
             <AiOutlineHome style={{ marginRight: '5px' }} /> Home
           </div>
@@ -30,54 +26,9 @@ const SystemAdminLeft = ({
         <h3 className='profession'>profession</h3>
       </div>
       <div className='list-of-buttons'>
-        <ButtonWithSubButtons
-          name={'Dashboard'}
-          pageName={'dashboard'}
-          icon={<AiOutlineHome />}
-          rightDisplay={rightDisplay}
-          setRightDisplay={setRightDisplay}
-          subRightDisplay={subRightDisplay}
-          setSubRightDisplay={setSubRightDisplay}
-        />
-        <ButtonWithSubButtons
-          name={'Hospital '}
-          pageName={'hospital'}
-          subButtons={['All Hospitals', 'Add Hospital', 'Hospital  Profiles']}
-          icon={<BsHospitalFill />}
-          rightDisplay={rightDisplay}
-          setRightDisplay={setRightDisplay}
-          subRightDisplay={subRightDisplay}
-          setSubRightDisplay={setSubRightDisplay}
-        />
-        <ButtonWithSubButtons
-          name={'Hospital Administrator'}
-          pageName={'hospital_administrator'}
-          subButtons={[
-            'All Hospital Administrators',
-            'Add Hospital Administrator',
-            'Hospital Administrator Profiles',
-          ]}
-          icon={<FaUserAlt />}
-          rightDisplay={rightDisplay}
-          setRightDisplay={setRightDisplay}
-          subRightDisplay={subRightDisplay}
-          setSubRightDisplay={setSubRightDisplay}
-        />
-
-        <ButtonWithSubButtons
-          name={'System Administrator'}
-          pageName={'system_administrator'}
-          subButtons={[
-            'All System Administrators',
-            'Add System Administrator',
-            'System Administrator Profiles',
-          ]}
-          icon={<RiAdminFill />}
-          rightDisplay={rightDisplay}
-          setRightDisplay={setRightDisplay}
-          subRightDisplay={subRightDisplay}
-          setSubRightDisplay={setSubRightDisplay}
-        />
+        {systemAdminLinks.map((item, index) => {
+          return <ButtonWithSubButtons key={index} {...item} />;
+        })}
       </div>
     </Wrapper>
   );

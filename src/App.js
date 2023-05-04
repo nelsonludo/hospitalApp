@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import SystemAdmin from './pages/SystemAdmin';
 import MassiveLoading from './components/MassiveLoading';
+import { systemAdminLinks } from './utils/constants';
 
 function App() {
   return (
@@ -14,7 +15,29 @@ function App() {
         {/* Block this route if the user is already logged in */}
         <Route path='/login/:route/:name' element={<Login />} />
         {/* Block this route if the user is not a system admin */}
-        <Route path='/system_admin' element={<SystemAdmin />} />
+        <Route path='/system_admin' element={<SystemAdmin />}>
+          {systemAdminLinks.map((link, index) => {
+            if (link?.sublinks) {
+              return (
+                <Route key={index} path={link.link} element={link?.element}>
+                  {link?.sublinks?.map((link, index) => {
+                    return (
+                      <Route
+                        key={index}
+                        path={link?.link}
+                        element={link?.element}
+                      />
+                    );
+                  })}
+                </Route>
+              );
+            } else {
+              return (
+                <Route key={index} path={link.link} element={link?.element} />
+              );
+            }
+          })}
+        </Route>
       </Routes>
     </BrowserRouter>
   );

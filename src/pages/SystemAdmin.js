@@ -1,26 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import SystemAdminLeft from '../components/SystemAdminLeft';
-import SystemAdminRight from '../components/SystemAdminRight';
+import { Outlet } from 'react-router-dom';
 
 const SystemAdmin = () => {
-  const [rightDisplay, setRightDisplay] = useState('dashboard');
-  const [subRightDisplay, setSubRightDisplay] = useState('');
-
   return (
     <Wrapper>
-      <SystemAdminLeft
-        rightDisplay={rightDisplay}
-        setRightDisplay={setRightDisplay}
-        subRightDisplay={subRightDisplay}
-        setSubRightDisplay={setSubRightDisplay}
-      />
-      <SystemAdminRight
-        rightDisplay={rightDisplay}
-        setRightDisplay={setRightDisplay}
-        subRightDisplay={subRightDisplay}
-        setSubRightDisplay={setSubRightDisplay}
-      />
+      <SystemAdminLeft />
+      <Outlet />
     </Wrapper>
   );
 };
