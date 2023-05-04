@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AiOutlineHome } from 'react-icons/ai';
-import { BsHospitalFill } from 'react-icons/bs';
-import { RiAdminFill } from 'react-icons/ri';
-import { FaUserAlt } from 'react-icons/fa';
 import ButtonWithSubButtons from './ButtonWithSubButtons';
 import { systemAdminLinks } from '../utils/constants';
+import { useNavigate } from 'react-router-dom';
 
 const SystemAdminLeft = () => {
+  const navigate = useNavigate();
+
   return (
     <Wrapper>
       <div className='flex'>
-        <button className='home'>
+        <button className='home' onClick={() => navigate('dashboard')}>
           <div className='flex2'>
             <AiOutlineHome style={{ marginRight: '5px' }} /> Home
           </div>
@@ -37,7 +37,6 @@ const SystemAdminLeft = () => {
 export default SystemAdminLeft;
 
 const Wrapper = styled.section`
-  width: 25%;
   background-color: var(--white);
   padding: 20px 15px;
   color: var(--black);
@@ -49,7 +48,7 @@ const Wrapper = styled.section`
     border: none;
     outline: none;
     color: var(--black);
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .home {

@@ -17,14 +17,36 @@ const AllHospitalAdmins = () => {
       <SystemAdminNavbar />
       <SystemAdminTitle title={'All Hospital Administrators'} />
       <div className='inside'>
-        <div className='flex'>
-          <h1 className='title'>All Hospital Admins</h1>
-          <button>
-            <FaUserAlt /> create new admin
+        <div className='flex top'>
+          <h1 className='title'>
+            <span className='green'>All</span> Hospital Admins
+          </h1>
+          <button className='create-admin'>
+            <span className='green'>
+              <FaUserAlt /> create new admin
+            </span>
           </button>
         </div>
         <div className='page'>
-          <button>{1}</button>
+          <select
+            name='page'
+            id='page'
+            value={page}
+            onChange={(e) => {
+              setPage(e.target.value);
+            }}
+          >
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5</option>
+            <option value={6}>6</option>
+            <option value={7}>7</option>
+            <option value={8}>8</option>
+            <option value={9}>9</option>
+            <option value={10}>10</option>
+          </select>
         </div>
         <table>
           <thead>
@@ -41,7 +63,7 @@ const AllHospitalAdmins = () => {
           <tbody>
             <tr>
               <td>
-                <img src='/images/profile.jpg' alt='' />
+                <img src='/images/profile.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -49,13 +71,13 @@ const AllHospitalAdmins = () => {
               <td>25/03/2001</td>
               <td>25/03/2001</td>
               <td>
-                <button>edit</button>
-                <button>delete</button>
+                <button className='edit'>edit</button>
+                <button className='delete'>delete</button>
               </td>
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' alt='' />
+                <img src='/images/profile.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -63,13 +85,13 @@ const AllHospitalAdmins = () => {
               <td>25/03/2001</td>
               <td>25/03/2001</td>
               <td>
-                <button>edit</button>
-                <button>delete</button>
+                <button className='edit'>edit</button>
+                <button className='delete'>delete</button>
               </td>
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' alt='' />
+                <img src='/images/profile.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -77,13 +99,13 @@ const AllHospitalAdmins = () => {
               <td>25/03/2001</td>
               <td>25/03/2001</td>
               <td>
-                <button>edit</button>
-                <button>delete</button>
+                <button className='edit'>edit</button>
+                <button className='delete'>delete</button>
               </td>
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' alt='' />
+                <img src='/images/profile.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -91,13 +113,13 @@ const AllHospitalAdmins = () => {
               <td>25/03/2001</td>
               <td>25/03/2001</td>
               <td>
-                <button>edit</button>
-                <button>delete</button>
+                <button className='edit'>edit</button>
+                <button className='delete'>delete</button>
               </td>
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' alt='' />
+                <img src='/images/profile.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -105,13 +127,13 @@ const AllHospitalAdmins = () => {
               <td>25/03/2001</td>
               <td>25/03/2001</td>
               <td>
-                <button>edit</button>
-                <button>delete</button>
+                <button className='edit'>edit</button>
+                <button className='delete'>delete</button>
               </td>
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' alt='' />
+                <img src='/images/profile.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -119,13 +141,13 @@ const AllHospitalAdmins = () => {
               <td>25/03/2001</td>
               <td>25/03/2001</td>
               <td>
-                <button>edit</button>
-                <button>delete</button>
+                <button className='edit'>edit</button>
+                <button className='delete'>delete</button>
               </td>
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' alt='' />
+                <img src='/images/profile.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -133,13 +155,13 @@ const AllHospitalAdmins = () => {
               <td>25/03/2001</td>
               <td>25/03/2001</td>
               <td>
-                <button>edit</button>
-                <button>delete</button>
+                <button className='edit'>edit</button>
+                <button className='delete'>delete</button>
               </td>
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' alt='' />
+                <img src='/images/profile.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -147,13 +169,13 @@ const AllHospitalAdmins = () => {
               <td>25/03/2001</td>
               <td>25/03/2001</td>
               <td>
-                <button>edit</button>
-                <button>delete</button>
+                <button className='edit'>edit</button>
+                <button className='delete'>delete</button>
               </td>
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' alt='' />
+                <img src='/images/profile.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -161,13 +183,13 @@ const AllHospitalAdmins = () => {
               <td>25/03/2001</td>
               <td>25/03/2001</td>
               <td>
-                <button>edit</button>
-                <button>delete</button>
+                <button className='edit'>edit</button>
+                <button className='delete'>delete</button>
               </td>
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' alt='' />
+                <img src='/images/profile.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -175,20 +197,23 @@ const AllHospitalAdmins = () => {
               <td>25/03/2001</td>
               <td>25/03/2001</td>
               <td>
-                <button>edit</button>
-                <button>delete</button>
+                <button className='edit'>edit</button>
+                <button className='delete'>delete</button>
               </td>
             </tr>
           </tbody>
         </table>
-        <Pagination
-          count={10}
-          page={page}
-          onChange={handleChange}
-          size='large'
-          // showFirstButton
-          // showLastButton
-        />
+        <div className='pagination-container'>
+          <Pagination
+            className='pagination'
+            count={10}
+            page={page}
+            onChange={handleChange}
+            size='large'
+            // showFirstButton
+            // showLastButton
+          />
+        </div>
       </div>
     </Wrapper>
   );
@@ -197,9 +222,93 @@ const AllHospitalAdmins = () => {
 export default AllHospitalAdmins;
 
 const Wrapper = styled.section`
-  width: 75%;
-
   .inside {
+    margin: 25px;
+    margin-top: -80px;
+    background-color: white;
+    border-radius: 5px;
     padding: 25px;
+    box-shadow: 0px 0px 2px black;
+  }
+
+  .page {
+    margin: 25px 0;
+  }
+
+  .page select {
+    padding: 3px 0px;
+    border-radius: 10px;
+    border: 2px solid var(--green);
+    outline: none;
+    color: var(--green);
+    font-size: var(--medium-font-size);
+    text-align: center;
+    width: 80px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    border-bottom: 1px solid black;
+
+    th {
+      font-weight: bold;
+      font-size: var(--medium-font-size);
+      text-align: left;
+      padding-bottom: 10px;
+    }
+  }
+
+  tbody td {
+    padding: 15px 0;
+    border-bottom: 1px solid black;
+    font-size: var(--medium-font-size);
+  }
+
+  .create-admin {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: var(--medium-font-size);
+    text-transform: capitalize;
+  }
+
+  .edit,
+  .delete {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: var(--medium-font-size);
+  }
+
+  .edit {
+    margin-right: 10px;
+    color: var(--green);
+  }
+
+  .delete {
+    color: red;
+  }
+
+  .profile {
+    border: 1px solid red;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 70px;
+    height: 70px;
+  }
+
+  .pagination-container {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .green {
+    color: var(--green);
   }
 `;

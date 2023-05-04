@@ -8,7 +8,7 @@ import {
 import { NavLink } from 'react-router-dom';
 
 const ButtonWithSubButtons = ({ name, sublinks, icon, link }) => {
-  const [showSubButtons, setShowSubButtons] = useState(true);
+  const [showSubButtons, setShowSubButtons] = useState(false);
 
   return (
     <Wrapper>
@@ -41,7 +41,7 @@ const ButtonWithSubButtons = ({ name, sublinks, icon, link }) => {
             return (
               <NavLink
                 to={`${link}/${button.link}`}
-                className={({ isActive }) => (isActive ? 'green' : '')}
+                className={({ isActive }) => (isActive ? 'font-weight' : '')}
               >
                 <button key={index}>
                   <AiOutlineArrowRight /> {button.name}
@@ -67,6 +67,7 @@ const Wrapper = styled.article`
     display: block;
     margin: 15px 0;
     transition: color 0.2s linear;
+    font-size: 22px;
   }
 
   button:hover {
@@ -79,8 +80,13 @@ const Wrapper = styled.article`
 
   .sub-btn-container button {
     margin-left: 20px;
-    font-size: 16px;
+    font-size: 18px;
     transition: all 0.2s linear;
+  }
+
+  .sub-btn-container button:hover {
+    font-weight: bold;
+    color: black;
   }
 
   .name {
@@ -89,5 +95,9 @@ const Wrapper = styled.article`
 
   a.green button {
     color: var(--green);
+  }
+
+  a.font-weight button {
+    font-weight: bold;
   }
 `;

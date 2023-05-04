@@ -14,6 +14,4 @@ const SystemAdminDashboard = () => {
 
 export default SystemAdminDashboard;
 
-const Wrapper = styled.section`
-  width: 75%;
-`;
+const Wrapper = styled.section``;
