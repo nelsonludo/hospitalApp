@@ -38,6 +38,7 @@ function App() {
             }
           })}
         </Route>
+        <Route path='/help' element={<h1>The help page is comming soon.</h1>} />
       </Routes>
     </BrowserRouter>
   );

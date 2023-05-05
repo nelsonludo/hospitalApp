@@ -43,6 +43,8 @@ const Wrapper = styled.nav`
   background-color: var(--green);
   padding: 25px;
   flex-wrap: wrap;
+  box-shadow: 0px 0px 30px black;
+  /* margin-bottom: 50px; */
 
   .logo {
     font-weight: normal;

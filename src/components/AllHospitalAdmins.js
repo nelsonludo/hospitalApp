@@ -252,7 +252,7 @@ const Wrapper = styled.section`
   }
 
   thead {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--grey);
 
     th {
       font-weight: bold;
@@ -264,7 +264,7 @@ const Wrapper = styled.section`
 
   tbody td {
     padding: 15px 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--grey);
     font-size: var(--medium-font-size);
   }
 

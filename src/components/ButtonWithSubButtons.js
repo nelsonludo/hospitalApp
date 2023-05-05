@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
   AiOutlineRight,
@@ -11,7 +11,7 @@ const ButtonWithSubButtons = ({ name, sublinks, icon, link }) => {
   const [showSubButtons, setShowSubButtons] = useState(false);
 
   return (
-    <Wrapper>
+    <Wrapper className='wrapper'>
       <NavLink
         to={`${sublinks?.length > 0 ? `${link}/${sublinks[0].link}` : link}`}
         className={({ isActive }) => (isActive ? 'green' : '')}
@@ -63,19 +63,16 @@ const Wrapper = styled.article`
     display: block;
   }
 
-  button {
+  .btn {
+    width: 100%;
     display: block;
     margin: 15px 0;
     transition: color 0.2s linear;
-    font-size: 22px;
+    font-size: 21px;
   }
 
-  button:hover {
+  .btn:hover {
     color: var(--green);
-  }
-
-  .btn {
-    width: 100%;
   }
 
   .sub-btn-container button {

@@ -40,11 +40,11 @@ const Login = () => {
       dispatch({ type: SET_LOADING_FALSE });
 
       if (route === 'system_admin') {
-        navigate('/system_admin');
+        navigate('/system_admins/dashboard');
       } else if (route === 'hospital_admin') {
-        navigate('/hospital_admin');
+        navigate('/hospital_admins/dashboard');
       } else if (route === 'doctor') {
-        navigate('/doctor');
+        navigate('/doctor/dashboard');
       } else {
         navigate('/patient');
       }

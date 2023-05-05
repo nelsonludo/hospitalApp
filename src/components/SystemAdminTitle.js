@@ -19,7 +19,6 @@ const Wrapper = styled.article`
   padding-bottom: 100px;
   color: var(--white);
   font-size: var(--big-font-size);
-  box-shadow: 0px 0px 30px black;
 
   h1 {
     font-weight: normal;
