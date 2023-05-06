@@ -223,11 +223,7 @@ export default AllHospitalAdmins;
 
 const Wrapper = styled.section`
   .inside {
-    margin: 25px;
-    margin-top: -80px;
     background-color: white;
-    border-radius: 5px;
-    padding: 25px;
     box-shadow: 0px 0px 2px black;
   }
 

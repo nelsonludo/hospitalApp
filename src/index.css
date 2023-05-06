@@ -29,10 +29,18 @@ body {
   margin: 0 auto;
 }
 
+.inside {
+  margin: 25px;
+  margin-top: -80px;
+  border-radius: 5px;
+  padding: 25px;
+}
+
 .flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .flex2 {
