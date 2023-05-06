@@ -23,7 +23,7 @@ const Wrapper = styled.article`
   background-color: white;
   padding: 25px 40px;
   border-radius: 10px;
-  box-shadow: 0px 0px 5px var(--black);
+  box-shadow: 0px 0px 15px var(--grey);
 
   .number {
     font-size: 50px;

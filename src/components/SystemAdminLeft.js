@@ -13,13 +13,15 @@ const SystemAdminLeft = () => {
       <div className='flex'>
         <button className='home' onClick={() => navigate('dashboard')}>
           <div className='flex2'>
-            <AiOutlineHome style={{ marginRight: '5px' }} /> Home
+            <AiOutlineHome style={{ marginRight: '10px' }} /> Home
           </div>
         </button>
-        <p>System Admin</p>
+        <p className='job'>System Admin</p>
       </div>
       <div className='flex2'>
-        <img src='/images/profile.jpg' alt='' className='profile' />
+        <div className='profile-container'>
+          <img src='/images/profile.jpg' alt='' className='profile' />
+        </div>
       </div>
       <div className='additional-info'>
         <h2 className='name'>My name here</h2>
@@ -37,11 +39,10 @@ const SystemAdminLeft = () => {
 export default SystemAdminLeft;
 
 const Wrapper = styled.section`
-  background-color: var(--white);
   padding: 20px 15px;
   color: var(--black);
   font-size: 18px;
-  box-shadow: 4px 0 10px -2px #888;
+  box-shadow: 4px 0 20px -2px var(--grey);
 
   button {
     background-color: transparent;
@@ -49,32 +50,44 @@ const Wrapper = styled.section`
     outline: none;
     color: var(--black);
     font-size: 20px;
+    color: grey;
+  }
+
+  .job {
+    color: grey;
   }
 
   .home {
     border: 2px solid var(--green);
-    padding: 10px;
+    padding: 15px;
     border-radius: 15px;
     font-weight: bold;
+  }
+
+  .profile-container {
+    background-color: var(--whitish);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
   }
 
   .profile {
     width: 100px;
     height: 100px;
     object-fit: contain;
-    border: 3px solid red;
+    border: 3px solid white;
     border-radius: 50%;
-    margin-top: 50px;
   }
 
   .additional-info {
-    color: var(--grey);
+    color: grey;
     text-align: center;
     padding: 20px 0;
     border-bottom: 2px solid var(--grey);
   }
 
-  .additional-info h2,
   .additional-info h3 {
     font-weight: normal;
   }

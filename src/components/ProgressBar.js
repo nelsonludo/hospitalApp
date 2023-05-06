@@ -14,7 +14,8 @@ const ProgressBar = ({ percentage, color }) => {
     },
     [`& .${linearProgressClasses.bar}`]: {
       borderRadius: 5,
-      backgroundColor: `${color}`,
+      // backgroundColor: `${color}`,
+      backgroundImage: `linear-gradient(to right, ${color}, grey)`,
     },
   }));
 

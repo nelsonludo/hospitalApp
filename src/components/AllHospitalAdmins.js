@@ -63,7 +63,7 @@ const AllHospitalAdmins = () => {
           <tbody>
             <tr>
               <td>
-                <img src='/images/profile.jpg' className='profile' alt='' />
+                <img src='/images/bg-home.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -77,7 +77,7 @@ const AllHospitalAdmins = () => {
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' className='profile' alt='' />
+                <img src='/images/bg-home.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -91,7 +91,7 @@ const AllHospitalAdmins = () => {
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' className='profile' alt='' />
+                <img src='/images/bg-home.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -105,7 +105,7 @@ const AllHospitalAdmins = () => {
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' className='profile' alt='' />
+                <img src='/images/bg-home.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -119,7 +119,7 @@ const AllHospitalAdmins = () => {
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' className='profile' alt='' />
+                <img src='/images/bg-home.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -133,7 +133,7 @@ const AllHospitalAdmins = () => {
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' className='profile' alt='' />
+                <img src='/images/bg-home.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -147,7 +147,7 @@ const AllHospitalAdmins = () => {
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' className='profile' alt='' />
+                <img src='/images/bg-home.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -161,7 +161,7 @@ const AllHospitalAdmins = () => {
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' className='profile' alt='' />
+                <img src='/images/bg-home.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -175,7 +175,7 @@ const AllHospitalAdmins = () => {
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' className='profile' alt='' />
+                <img src='/images/bg-home.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -189,7 +189,7 @@ const AllHospitalAdmins = () => {
             </tr>
             <tr>
               <td>
-                <img src='/images/profile.jpg' className='profile' alt='' />
+                <img src='/images/bg-home.jpg' className='profile' alt='' />
               </td>
               <td>Diallo Abdourahman</td>
               <td>dialliabdourahman78@gmail.com</td>
@@ -224,7 +224,10 @@ export default AllHospitalAdmins;
 const Wrapper = styled.section`
   .inside {
     background-color: white;
-    box-shadow: 0px 0px 2px black;
+    box-shadow: 0px 0px 10px var(--grey);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .page {
@@ -259,9 +262,9 @@ const Wrapper = styled.section`
   }
 
   tbody td {
-    padding: 15px 0;
     border-bottom: 1px solid var(--grey);
     font-size: var(--medium-font-size);
+    padding: 5px 0;
   }
 
   .create-admin {
@@ -290,11 +293,11 @@ const Wrapper = styled.section`
   }
 
   .profile {
-    border: 1px solid red;
     border-radius: 50%;
     object-fit: cover;
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
+    display: block;
   }
 
   .pagination-container {
